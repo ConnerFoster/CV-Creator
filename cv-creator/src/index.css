@@ -93,3 +93,15 @@ li {
     height: 110vh;
   }
 }
+
+@media only screen and (max-width: 900px) {
+  .main {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 2rem;
+  }
+  .preview {
+    margin-right: -1rem;
+  }
+}
