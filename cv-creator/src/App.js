@@ -11,13 +11,13 @@ function App() {
 
   const [state, setState] = useState({
     personalInfo: {
-      FirstName: 'Conner',
-      LastName: 'Foster',
-      title: 'Software Engineer',
-      address: '946 E Beech St Sullivan, IN 47882',
-      phone: '123-456-7899',
-      email: 'connerf99@gmail.com',
-      description: 'Just a test lorem ipsum dolor',
+      FirstName: '',
+      LastName: '',
+      title: '',
+      address: '',
+      phone: '',
+      email: '',
+      description: '',
     },
   })
 
@@ -31,16 +31,16 @@ function App() {
   const [exp, setExp] = useState({
     experience: [
       {
-        position: 'Software Dev',
-        company: 'Google',
-        city: 'California',
-        from: '2020',
-        to: '2022',
-        //position: '',
-        //company: '',
-        //city: '',
-        //from: '',
-        //to: '',
+        //position: 'Software Dev',
+        //company: 'Google',
+        //city: 'California',
+        //from: '2020',
+        //to: '2022',
+        position: '',
+        company: '',
+        city: '',
+        from: '',
+        to: '',
       },
     ],
   })
@@ -168,6 +168,43 @@ function App() {
     })
   }
 
+  const loadExample = () => {
+    setEdu({
+      education: [
+        {
+          university: 'Great State University',
+          city: 'Great City',
+          state: 'California',
+          degree: 'Bachelor of Science',
+          subject: 'Computer Science',
+          date: '05/14/2020',
+        },
+      ],
+    })
+    setExp({
+      experience: [
+        {
+          position: 'Software Engineer',
+          company: 'Big Tech Company',
+          city: 'New York',
+          from: '2021',
+          to: '2022',
+        },
+      ],
+    })
+    setState({
+      personalInfo: {
+        FirstName: 'John',
+        LastName: 'Doe',
+        title: 'Software Engineer',
+        address: '123 Main St. New York, NY 10001',
+        phone: '123-456-7890',
+        email: 'johndoe@example.com',
+        description: 'Talented software developer with years of experience',
+      },
+    })
+  }
+
   return (
     <div className='App'>
       <Header />
@@ -184,6 +221,8 @@ function App() {
           removeEducation={removeEducation}
           onPrint={handlePrint}
           reset={reset}
+          personalInfo={state.personalInfo}
+          loadExample={loadExample}
         />
         <Preview
           data={state.personalInfo}

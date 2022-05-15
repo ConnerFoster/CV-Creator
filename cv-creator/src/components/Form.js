@@ -1,10 +1,8 @@
 import React, {useRef} from 'react'
-import ReactToPrint from 'react-to-print'
 import Button from './Button'
 import PersonalInfo from './form-components/PersonalInfo'
 import Experience from './form-components/Experience'
 import Education from './form-components/Education'
-import Preview from '../Preview'
 
 const formStyle = {
   backgroundColor: '#eeeeee',
@@ -22,7 +20,10 @@ const Form = (props) => {
   return (
     <>
       <div style={formStyle} id='main-form'>
-        <PersonalInfo onUpdate={props.onUpdate} />
+        <PersonalInfo
+          onUpdate={props.onUpdate}
+          personalInfo={props.personalInfo}
+        />
         <h3>Experience</h3>
         {props.experience.map((exp, expIndex) => {
           return (
@@ -52,8 +53,12 @@ const Form = (props) => {
         <br />
 
         <button onClick={props.onPrint}>Generate PDF</button>
-        <Button text='Load Example' color='orange' />
-        <Button onClick={props.reset} text='Reset' color='red' />
+        <Button
+          onClick={props.loadExample}
+          text='Load Example'
+          color='#c25c0e'
+        />
+        <Button onClick={props.reset} text='Reset' color='#b3211e' />
       </div>
     </>
   )

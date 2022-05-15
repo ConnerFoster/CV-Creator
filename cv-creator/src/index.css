@@ -29,6 +29,8 @@ button {
   height: 2rem;
   margin-bottom: .5rem;
   cursor: pointer;
+  background-color: #1ba148;
+  color: white;
 }
 
 
